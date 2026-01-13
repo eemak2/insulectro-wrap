@@ -187,21 +187,28 @@ function Field({ label, value, onChange }: FieldProps) {
   );
 }
 
-type FieldProps = {
+type SelectProps = {
   label: string;
   value: string;
   onChange: (v: string) => void;
+  options: string[];
 };
 
-function Field({ label, value, onChange }: FieldProps) {
+function Select({ label, value, onChange, options }: SelectProps) {
   return (
     <label style={styles.label}>
       <div style={styles.labelText}>{label}</div>
-      <input
+      <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        style={styles.inputWide}
-      />
+        style={styles.input}
+      >
+        {options.map((o) => (
+          <option key={o} value={o}>
+            {o}
+          </option>
+        ))}
+      </select>
     </label>
   );
 }
