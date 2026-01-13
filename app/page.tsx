@@ -162,8 +162,8 @@ async function runAction(actionId: string) {
   );
 }
 
-function Row({ children }) {
-  return <div style={styles.row}>{children}</div>;
+function Row({ children }: { children: React.ReactNode }) {
+  return <div style={styles.row}>{children}</div>;}
 }
 
 function Field({ label, value, onChange }) {
