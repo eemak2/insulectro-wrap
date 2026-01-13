@@ -37,7 +37,7 @@ export default function Home() {
     return `${wrap.customerType} • ${wrap.application} • ${wrap.stage} • Priority: ${wrap.priority} • Category: ${wrap.category}`;
   }, [wrap]);
 
-  async function runAction(actionId) {
+async function runAction(actionId: string) {
     setLoading(true);
     const next = [...messages, { role: "user", content: `[Action: ${actionId}]` }];
 
