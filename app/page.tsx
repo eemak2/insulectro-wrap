@@ -162,29 +162,50 @@ async function runAction(actionId: string) {
   );
 }
 
-function Row({ children }: { children: React.ReactNode }) {
-  return <div style={styles.row}>{children}</div>;}
+type RowProps = { children: React.ReactNode };
+
+function Row({ children }: RowProps) {
+  return <div style={styles.row}>{children}</div>;
 }
 
-function Field({ label, value, onChange }) {
+type FieldProps = {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+};
+
+function Field({ label, value, onChange }: FieldProps) {
   return (
     <label style={styles.label}>
       <div style={styles.labelText}>{label}</div>
-      <input value={value} onChange={(e)=>onChange(e.target.value)} style={styles.inputWide} />
+      <input
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        style={styles.inputWide}
+      />
     </label>
   );
 }
 
-function Select({ label, value, onChange, options }) {
+type FieldProps = {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+};
+
+function Field({ label, value, onChange }: FieldProps) {
   return (
     <label style={styles.label}>
       <div style={styles.labelText}>{label}</div>
-      <select value={value} onChange={(e)=>onChange(e.target.value)} style={styles.select}>
-        {options.map(o => <option key={o} value={o}>{o}</option>)}
-      </select>
+      <input
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        style={styles.inputWide}
+      />
     </label>
   );
 }
+
 const styles = {
   page: {
     maxWidth: 1200,
