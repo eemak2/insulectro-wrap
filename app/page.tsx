@@ -96,29 +96,29 @@ async function runAction(actionId: string) {
         <section style={styles.card}>
           <h2 style={styles.h2}>Project Setup (Add Context)</h2>
 
-          <Field label="Project / Program name (optional)" value={wrap.project} onChange={(v)=>setWrap({...wrap, project:v})} />
+          <Field label="Project / Program name (optional)" value={wrap.project} onChange={(v: string)=>setWrap({...wrap, project:v})} />
           <Row>
-            <Select label="Customer type" value={wrap.customerType} onChange={(v)=>setWrap({...wrap, customerType:v})}
+            <Select label="Customer type" value={wrap.customerType} onChange={(v: string)=>setWrap({...wrap, customerType:v})}
               options={["PCB Fab","OEM","EMS","Printed electronics"]} />
-            <Select label="Stage" value={wrap.stage} onChange={(v)=>setWrap({...wrap, stage:v})}
+            <Select label="Stage" value={wrap.stage} onChange={(v: string)=>setWrap({...wrap, stage:v})}
               options={["Design / selection","Qualification","Production","Supply disruption"]} />
           </Row>
 
-          <Select label="Application" value={wrap.application} onChange={(v)=>setWrap({...wrap, application:v})}
+          <Select label="Application" value={wrap.application} onChange={(v: string)=>setWrap({...wrap, application:v})}
             options={["High-speed digital (HSD)","RF / Microwave","HDI / mSAP","Power / thermal-heavy","Flex / Rigid-flex","General FR-4"]} />
 
           <Row>
-            <Select label="Priority" value={wrap.priority} onChange={(v)=>setWrap({...wrap, priority:v})}
+            <Select label="Priority" value={wrap.priority} onChange={(v: string)=>setWrap({...wrap, priority:v})}
               options={["Reliability / consistency","Lead time / availability","Cost / value","Performance / loss","Qualification speed"]} />
-            <Select label="Category focus" value={wrap.category} onChange={(v)=>setWrap({...wrap, category:v})}
+            <Select label="Category focus" value={wrap.category} onChange={(v: string)=>setWrap({...wrap, category:v})}
               options={["Laminates & Prepregs","Copper Foil","Process & Lamination materials"]} />
           </Row>
 
-          <Field label="Signal / impedance notes" value={wrap.signal} onChange={(v)=>setWrap({...wrap, signal:v})} />
-          <Field label="Thermal / reliability notes" value={wrap.thermal} onChange={(v)=>setWrap({...wrap, thermal:v})} />
-          <Field label="Mechanical / form factor notes" value={wrap.mechanical} onChange={(v)=>setWrap({...wrap, mechanical:v})} />
-          <Field label="Supply / lead time sensitivity" value={wrap.supply} onChange={(v)=>setWrap({...wrap, supply:v})} />
-          <Field label="Current material situation (optional)" value={wrap.current} onChange={(v)=>setWrap({...wrap, current:v})} />
+          <Field label="Signal / impedance notes" value={wrap.signal} onChange={(v: string)=>setWrap({...wrap, signal:v})} />
+          <Field label="Thermal / reliability notes" value={wrap.thermal} onChange={(v: string)=>setWrap({...wrap, thermal:v})} />
+          <Field label="Mechanical / form factor notes" value={wrap.mechanical} onChange={(v: string)=>setWrap({...wrap, mechanical:v})} />
+          <Field label="Supply / lead time sensitivity" value={wrap.supply} onChange={(v: string)=>setWrap({...wrap, supply:v})} />
+          <Field label="Current material situation (optional)" value={wrap.current} onChange={(v: string)=>setWrap({...wrap, current:v})} />
 
           <div style={styles.actions}>
             {ACTIONS.map(a => (
